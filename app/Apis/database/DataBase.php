@@ -335,16 +335,12 @@ class DataBase
     public static function getConn()
     {
         // $url = "https://www.blockonomics.co/api/";
-        // $servername = "ftp.avp.vgy.mybluehost.me";
-        // $username = "avpvgymy_erect1";
-        // $password = "Acoincluboffice";
-
-        //
-        $servername = "localhost";
-        $password = "";
-        $username = "root";
+        $servername = "156.67.74.101";
+        $password = "Adedamolarioland2222@gmail.com";
+        $username = "u538836443_acoinclub";
+        $dbname="u538836443_acoinclub";
         try {
-            $conn = new PDO("mysql:host=$servername;dbname=avpvgymy_erect1", $username, $password);
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);

@@ -159,7 +159,7 @@ require 'app/Apis/database/DataBase.php';
                                     <!--- --- 1 ---  -->
                                     <div class="checkboxes">
                                         <label class="agreebox container">
-                                            <input class="checkbox1"  type="checkbox" name="oksionemail" id="oksionemail">
+                                            <input class="checkbox1" type="checkbox" name="oksionemail" id="oksionemail">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="agreetxt">
@@ -169,7 +169,7 @@ require 'app/Apis/database/DataBase.php';
                                     <!-- -- -- 2 -- --  -->
                                     <div class="checkboxes">
                                         <label class="agreebox container">
-                                            <input class="checkbox1"  type="checkbox" name="okterms" id="okterms">
+                                            <input class="checkbox1" type="checkbox" name="okterms" id="okterms">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="agreetxt"> I accept Acoinclub's Terms of Use and Privacy Policy
@@ -177,7 +177,7 @@ require 'app/Apis/database/DataBase.php';
                                     </div>
                                 </div>
                                 <p class="btncon"><button type="submit" id="regbtn" class="w3-button w3-teal w3-round-large w3-hover-light-blue submitbtn">
-                                        <label id="current"  class="  ">
+                                        <label id="current" class="  ">
                                             Create
                                             account
                                         </label>
@@ -231,31 +231,28 @@ require 'app/Apis/database/DataBase.php';
                 let oksionemail = $('#oksionemail')[0].checked
                 let okterms = $('#okterms')[0].checked
                 if (cpass === pass) {
-                    if (contry == "select") {
-                        alert("Please choice your country");
-                        e.preventDefault();
-                    } else {
-                        if (okterms == true) {
-                            if (oksionemail == true) {
 
-                            } else {
-                                swal({
+                    if (okterms == true) {
+                        if (oksionemail == true) {
+                            return true;
+                        } else {
+                            swal({
                                 title: "Login Error",
                                 text: "You need to subscribe",
                                 icon: "error",
                             });;
-                                e.preventDefault();
-                            }
-                        } else {
-                            swal({
-                                title: "Login Error",
-                                text: "Accept our licence",
-                                icon: "error",
-                            });
-
                             e.preventDefault();
                         }
+                    } else {
+                        swal({
+                            title: "Login Error",
+                            text: "Accept our licence",
+                            icon: "error",
+                        });
+
+                        e.preventDefault();
                     }
+
                 } else {
                     swal({
                         title: "Login Error",

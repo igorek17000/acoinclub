@@ -73,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_REQUEST['action']) and $_REQUEST['action'] == "register") {
         $email = htmlentities($_REQUEST['email']);
         $pass = htmlentities($_REQUEST['password']);
+        $cpass = htmlentities($_REQUEST['password']);
         $country = htmlentities($_REQUEST['country']);
         $response = DataBase::register($email, $pass, $country);
         if ($response == "true") {
