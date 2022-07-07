@@ -73,15 +73,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_REQUEST['action']) and $_REQUEST['action'] == "register") {
         $email = htmlentities($_REQUEST['email']);
         $pass = htmlentities($_REQUEST['password']);
-        $cpass = htmlentities($_REQUEST['password']);
+        $cpass = htmlentities($_REQUEST['cpassword']);
         $country = htmlentities($_REQUEST['country']);
-        $response = DataBase::register($email, $pass, $country);
+        if($pass===$cpass){
+            $response = DataBase::register($email, $pass, $country);
         if ($response == "true") {
             header("location:login");
         } else {
             $_SESSION['message'] = $response;
             header("location:signup");
             // echo $_SESSION['message'];
+        }
+        }else{
+            $_SESSION['message'] ="Password Not Match";
+            header("location:signup");
         }
     }
 
